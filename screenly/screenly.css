@@ -2,9 +2,19 @@ body {
   background-color: #000;
 }
 
+.bg-dark {
+  background-color: #000;
+  color: #fff;
+}
+.bg-light {
+  background-color: #fff;
+  color: #000;
+}
+
 .content {
   height: 1920px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  overflow: hidden;
   position: absolute;
   width: 1082px;
 }
@@ -35,13 +45,27 @@ body {
 }
 
 .text {
-  color: #fff;
   position: relative;
   text-align: center;
+  vertical-align: top;
 }
-/* h1 {
-  font-size: 1em;
-} */
+
+.text h1 {
+  font-size: 5em;
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+
+.text p.big {
+  font-size: 3em;
+}
+
+.text span.highlight {
+  color: goldenrod;
+  display: block;
+  font-weight: bold;
+  margin: 20px auto;
+}
 
 p {
   font-size: 2em;
@@ -71,4 +95,34 @@ div.divider {
   padding: 40px;
   text-align: center;
   width: 100%;
+}
+
+.col-2 {
+  display: block;
+  padding: 20px 0;
+}
+
+.col-2>div {
+  display: inline-block;
+  position: relative;
+}
+
+.col-2 .rel-30 {
+  width: 322px;
+}
+.col-2 .rel-40 {
+  width: 430px;
+}
+.col-2 .rel-50 {
+  width: 538px;
+}
+.col-2 .rel-60 {
+  width: 646px;
+}
+.col-2 .rel-70 {
+  width: 754px;
+}
+
+.p-right {
+  text-align: right;
 }
