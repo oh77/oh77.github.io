@@ -59,6 +59,9 @@ body {
 .text p.big {
   font-size: 3em;
 }
+.text p.superbig {
+  font-size: 5em;
+}
 
 .text span.highlight {
   color: goldenrod;
