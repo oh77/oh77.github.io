@@ -2,6 +2,19 @@ body {
   background-color: #000;
 }
 
+.cfmb-color-1 {
+  color: #FEC10D;
+}
+.cfmb-color-2 {
+  color: #F16521;
+}
+.cfmb-color-3 {
+  color: #ED1C24;
+}
+.cfmb-color-4 {
+  color: #BE141A;
+}
+
 .bg-dark {
   background-color: #000;
   color: #fff;
@@ -33,7 +46,6 @@ body {
 
 .hero h1 {
   top: 519px;
-  color: rgb(255, 210, 85);
   font-size: 6em;
   font-weight: bold;
   margin: 0 auto;
@@ -42,6 +54,11 @@ body {
   text-align: center;
   text-transform: uppercase;
   width: 100%;
+}
+.hero h1.xl {
+  top: 491px;
+  font-size: 8em;
+  font-weight: bold;
 }
 
 .text {
@@ -68,6 +85,36 @@ body {
   display: block;
   font-weight: bold;
   margin: 20px auto;
+}
+
+.text .pop-date-1 {
+  border-bottom: #F16521 3px solid;
+  border-top: #F16521 3px solid;
+  font-size: 9em;
+  font-weight: bold;
+  margin: 1em 0;
+  padding-bottom: .5em;
+  padding-top: .5em;
+}
+
+.text .pop-date {
+  color: #000;
+  background-color: #F16521;
+  font-size: 9em;
+  font-weight: bold;
+  margin: 1em 0;
+  padding-bottom: .5em;
+  padding-top: .5em;
+}
+
+.text .intro,
+.text .outro {
+  font-size: 4em;
+  margin-bottom: .5em;
+  margin-top: .5em;
+}
+.text .intro {
+  margin-top: 2em; 
 }
 
 p {
