@@ -79,6 +79,23 @@ section:after {
   color: #BE141A;
 }
 
+.cfmb-bg-color-1 {
+  background-color: #FEC10D;
+  color: #333333;
+}
+.cfmb-bg-color-2 {
+  background-color: #F16521;
+  color: #333333;
+}
+.cfmb-bg-color-3 {
+  background-color: #ED1C24;
+  color: #dedede;
+}
+.cfmb-bg-color-4 {
+  background-color: #BE141A;
+  color: #dedede;
+}
+
 .bg-dark {
   background-color: #000;
   color: #fff;
@@ -181,12 +198,13 @@ section:after {
 }
 
 .images-3 {
-  margin-top: 8em;
   text-align: center;
+  white-space: nowrap;
 }
 
 .images-3>img {
-  width: 33vw;
+  border: 0 none transparent;
+  width: 33.333%;
 }
 
 p {
@@ -209,6 +227,11 @@ li {
 li span.day {
   font-size: 1.3em;
   font-weight: bold;
+}
+
+ul.dates {
+  font-size: 3em;
+  margin: 75px auto;
 }
 
 div.divider {
