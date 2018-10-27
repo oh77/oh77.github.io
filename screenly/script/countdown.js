@@ -13,7 +13,32 @@ function getTimeRemaining(endtime) {
   };
 }
 
-function initializeClock(id, endtime) {
+function initializeClock(id) {
+  var clock = document.getElementById(id);
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  // var secondsSpan = clock.querySelector('.seconds');
+  var daySpan = clock.querySelector('.day');
+
+  var months = ['januari', 'februari', 'mars',
+                'april', 'maj', 'juni',
+                'juli', 'augusti', 'september',
+                'oktober', 'november', 'december']
+
+  function updateClock() {
+    var t = new Date();
+
+    hoursSpan.innerHTML = ('0' + t.getHours()).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.getMinutes()).slice(-2);
+    // secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+    daySpan.innerHTML =  t.getDate() + ' ' + months[t.getMonth()];
+  }
+
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
+
+function initializeCountdown(id, endtime) {
   var clock = document.getElementById(id);
   var daysSpan = clock.querySelector('.days');
   var hoursSpan = clock.querySelector('.hours');
