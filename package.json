@@ -1,0 +1,11 @@
+{
+  "name": "ohdoubleseven.se",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/oh77/oh77.github.io",
+  "author": "Andreas Jagelund <andreas@jagelund.se>",
+  "license": "MIT",
+  "scripts": {
+    "screenly": "screenly/fitaidrx.html"
+  }
+}
