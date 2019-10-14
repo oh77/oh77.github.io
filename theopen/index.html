@@ -44,18 +44,18 @@
       }
 
       div.left {
-        font-size: 2em;
+        font-size: 1.85em;
         width: 400px;
       }
 
       div.week-result {
-        font-size: 1em;
+        font-size: 0.75em;
       }
 
       div.total-score {
         background-color: #f49127;
         color: #fff;
-        font-size: 3em;
+        font-size: 2.8em;
         padding-right: 5px;
         text-align: right;
         width: 100px;
@@ -102,33 +102,48 @@
 
       var resultsContainer = document.getElementById("results");
 
-      const getScores = (ath, week) =>
-        ath[`score${week}`] &&
-        `
-        <div class="week-result week-${week}">${ath[`score${week}`]}</div>
-      `;
+      var getScores = function(ath, week) {
+        var index = "score" + week;
+        if (!ath[index]) {
+          return "";
+        }
+        return (
+          '<div class="week-result week-' + week + '">' + ath[index] + "</div>"
+        );
+      };
 
-      const createLine = ath => {
-        const li = document.createElement("li");
+      var createLine = function(ath) {
+        var li = document.createElement("li");
         li.className = "athlete";
-        const line = `<div class="left">
-          <div class="name">${ath.first_name} ${ath.last_name}</div>
-          <div class="scores">
-              ${getScores(ath, "201")}
-              ${getScores(ath, "202")}
-              ${getScores(ath, "203")}
-              ${getScores(ath, "204")}
-              ${getScores(ath, "205")}
-          </div>
-          </div>
-          <div class="total-score">${ath.total}</div>`;
+        var line = '<div class="left">';
+        line =
+          line +
+          '<div class="name">' +
+          ath.first_name +
+          " " +
+          ath.last_name +
+          "</div>";
+        line = line + '<div class="scores">';
+        line = line + getScores(ath, "201");
+        line = line + getScores(ath, "202");
+        line = line + getScores(ath, "203");
+        line = line + getScores(ath, "204");
+        line = line + getScores(ath, "205");
+        line = line + "</div>";
+        line = line + "</div>";
+        line = line + '<div class="total-score">'+ath.total+'</div>';
         li.innerHTML = line;
         resultsContainer.appendChild(li);
       };
 
       // getting the text value from the database
       var dbRef = firebase.database().ref("/");
-      dbRef.on("value", snap => snap.val().map(ath => createLine(ath)));
+      dbRef.on("value", function(snap) {
+        var data = snap.val();
+        for (var i = 0; i < data.length; i++) {
+          createLine(data[i]);
+        }
+      });
     </script>
   </body>
 </html>
