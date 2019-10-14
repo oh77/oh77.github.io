@@ -1,0 +1,134 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CrossFit Games - The Open</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #2dbdb6;
+        font-family: "Oswald", sans-serif;
+      }
+      .top > img {
+        margin-top: -120px;
+        max-height: 350px;
+      }
+
+      .table {
+        color: #000000;
+        margin: 0 auto;
+        margin-top: -90px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 10px;
+      }
+
+      li {
+        background-color: #54c4c7;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 5px 0;
+        width: 100%;
+      }
+
+      li > div {
+      }
+
+      div.left {
+        font-size: 2em;
+        width: 400px;
+      }
+
+      div.week-result {
+        font-size: 1em;
+      }
+
+      div.total-score {
+        background-color: #f49127;
+        color: #fff;
+        font-size: 3em;
+        padding-right: 5px;
+        text-align: right;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <img src="./open-logo-custom.svg" alt="" />
+    </div>
+    <div class="table">
+      <ul id="results"></ul>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyD1ewBD_0lmOA-p3h-1EJCHBZJ0VHaahLo",
+        authDomain: "cfgopen202.firebaseapp.com",
+        databaseURL: "https://cfgopen202.firebaseio.com",
+        projectId: "cfgopen202",
+        storageBucket: "cfgopen202.appspot.com",
+        messagingSenderId: "487369120948",
+        appId: "1:487369120948:web:2879c7eeb2fe661b0f4be1",
+        measurementId: "G-XL7Y4MW88P"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-database.js"></script>
+
+    <script>
+      // let database = firebase.database();
+      //   let dbRef = database.ref('/athletes/');
+
+      var resultsContainer = document.getElementById("results");
+
+      const getScores = (ath, week) =>
+        ath[`score${week}`] &&
+        `
+        <div class="week-result week-${week}">${ath[`score${week}`]}</div>
+      `;
+
+      const createLine = ath => {
+        const li = document.createElement("li");
+        li.className = "athlete";
+        const line = `<div class="left">
+          <div class="name">${ath.first_name} ${ath.last_name}</div>
+          <div class="scores">
+              ${getScores(ath, "201")}
+              ${getScores(ath, "202")}
+              ${getScores(ath, "203")}
+              ${getScores(ath, "204")}
+              ${getScores(ath, "205")}
+          </div>
+          </div>
+          <div class="total-score">${ath.total}</div>`;
+        li.innerHTML = line;
+        resultsContainer.appendChild(li);
+      };
+
+      // getting the text value from the database
+      var dbRef = firebase.database().ref("/");
+      dbRef.on("value", snap => snap.val().map(ath => createLine(ath)));
+    </script>
+  </body>
+</html>
