@@ -69,6 +69,7 @@
     <div class="table">
       <ul id="results"></ul>
     </div>
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
 
@@ -101,6 +102,7 @@
       //   let dbRef = database.ref('/athletes/');
 
       var resultsContainer = document.getElementById("results");
+      try {
 
       var getScores = function(ath, week) {
         var index = "score" + week;
@@ -144,6 +146,9 @@
           createLine(data[i]);
         }
       });
+    } catch (ex) {
+      resultsContainer.innerText = ex;
+    }
     </script>
   </body>
 </html>
