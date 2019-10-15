@@ -12,7 +12,7 @@
 
     <style>
       body {
-        background-color: #2dbdb6;
+        background-color: #54c4c7;
         font-family: "Oswald", sans-serif;
       }
       .top > img {
@@ -32,31 +32,64 @@
       }
 
       li {
-        background-color: #54c4c7;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        background-color: #ffcb16;
+        height: 74px;
         margin: 5px 0;
+        padding: 0;
         width: 100%;
       }
 
       li > div {
+        display: inline-block;
+      }
+
+      li:first-child,
+      li:nth-child(2),
+      li:nth-child(3) {
+        background-color: #e6b222;
       }
 
       div.left {
+        height: 74px;
+        overflow: hidden;
+        padding: 0;
+        width: 80%;
+      }
+      div.right {
+        background-color: #ef3e41;
+        height: 74px;
+        overflow: hidden;
+        padding: 0;
+        width: 20%;
+      }
+
+      div.name {
         font-size: 1.85em;
-        width: 400px;
+        padding-left: 10px;
       }
 
       div.week-result {
-        font-size: 0.75em;
+        display: inline-block;
+        font-size: 1.25em;
+        padding-left: 10px;
+        padding-right: 10px;
       }
 
+      div.week-201, .week-203, .week-205 {
+        background-color: #F49127;
+      }
+      .week-202, .week-204 {
+        background-color: #D37728;
+      }
+      
       div.total-score {
-        background-color: #f49127;
+        /* background-color: #f49127; */
         color: #fff;
+        float: right;
         font-size: 2.8em;
-        padding-right: 5px;
+        margin: 0;
+        padding: 0;
+        padding-right: 10px;
         text-align: right;
         width: 100px;
       }
@@ -673,7 +706,7 @@
         var getScores = function(ath, week) {
           var index = "score" + week;
           if (!ath[index]) {
-            return "";
+            return "&nbsp;";
           }
           return (
             '<div class="week-result week-' +
@@ -703,23 +736,18 @@
           line = line + getScores(ath, "205");
           line = line + "</div>";
           line = line + "</div>";
-          line = line + '<div class="total-score">' + ath.total + "</div>";
+          line =
+            line +
+            '<div class="right"><div class="total-score">' +
+            ath.total +
+            "</div></div>";
           li.innerHTML = line;
           resultsContainer.appendChild(li);
         };
 
-        // // getting the text value from the database
-        // var dbRef = firebase.database().ref("/");
-        // dbRef.on("value", function(snap) {
-        //   var data = snap.val();
-        // data = data.sort(function(a, b) {
-        //   return parseInt(a.total) > parseInt(b.total);
-        // });
-
         for (var i = 0; i < data.length; i++) {
           createLine(data[i]);
         }
-        // });
       } catch (ex) {
         resultsContainer.innerText = ex;
       }
