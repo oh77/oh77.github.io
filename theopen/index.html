@@ -70,85 +70,655 @@
       <ul id="results"></ul>
     </div>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
-
     <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyD1ewBD_0lmOA-p3h-1EJCHBZJ0VHaahLo",
-        authDomain: "cfgopen202.firebaseapp.com",
-        databaseURL: "https://cfgopen202.firebaseio.com",
-        projectId: "cfgopen202",
-        storageBucket: "cfgopen202.appspot.com",
-        messagingSenderId: "487369120948",
-        appId: "1:487369120948:web:2879c7eeb2fe661b0f4be1",
-        measurementId: "G-XL7Y4MW88P"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-    </script>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-database.js"></script>
-
-    <script>
-      // let database = firebase.database();
-      //   let dbRef = database.ref('/athletes/');
+      var data = [
+        {
+          first_name: "Daniel",
+          last_name: "Arvidsson",
+          gender: "M",
+          intheopen: "TRUE",
+          total: 1,
+          score201: "12:57",
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 1,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Daniel",
+          last_name: "Brattschöld",
+          gender: "M",
+          intheopen: "TRUE",
+          total: 2,
+          score201: "14:36",
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 2,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Cissi",
+          last_name: "Jansson",
+          gender: "F",
+          intheopen: "FALSE",
+          total: 3,
+          score201: "14:41",
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 3,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Viktoria",
+          last_name: "Wendschlag",
+          gender: "F",
+          intheopen: "TRUE",
+          total: 17,
+          score201: 77,
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 17,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Valeria",
+          last_name: "Petrovets",
+          gender: "F",
+          intheopen: "TRUE",
+          total: 16,
+          score201: 78,
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 16,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Emmy",
+          last_name: "Hall",
+          gender: "F",
+          intheopen: "FALSE",
+          total: 15,
+          score201: 82,
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 15,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "David",
+          last_name: "Larson",
+          gender: "M",
+          intheopen: "TRUE",
+          total: 14,
+          score201: 93,
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 14,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Christel",
+          last_name: "Högberg Lundberg",
+          gender: "F",
+          intheopen: "TRUE",
+          total: 13,
+          score201: 97,
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 13,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Johan",
+          last_name: "Sandgren",
+          gender: "M",
+          intheopen: "FALSE",
+          total: 12,
+          score201: 98,
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 12,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Sebastian",
+          last_name: "Wetterberg",
+          gender: "M",
+          intheopen: "TRUE",
+          total: 11,
+          score201: 113,
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 11,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Andreas",
+          last_name: "Jagelund",
+          gender: "M",
+          intheopen: "TRUE",
+          total: 10,
+          score201: 124,
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 10,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Malvina",
+          last_name: "Eklöf",
+          gender: "F",
+          intheopen: "FALSE",
+          total: 9,
+          score201: 126,
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 9,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Daniella",
+          last_name: "Johansson",
+          gender: "F",
+          intheopen: "TRUE",
+          total: 8,
+          score201: 129,
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 8,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Niklas",
+          last_name: "Rittblad",
+          gender: "M",
+          intheopen: "FALSE",
+          total: 7,
+          score201: 147,
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 7,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Anton",
+          last_name: "Andersson",
+          gender: "M",
+          intheopen: "TRUE",
+          total: 5,
+          score201: 150,
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 5,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Robin",
+          last_name: "Eriksson",
+          gender: "M",
+          intheopen: "TRUE",
+          total: 4,
+          score201: 162,
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 4,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Albin",
+          last_name: "Åström",
+          gender: "M",
+          intheopen: "TRUE",
+          total: 6,
+          score201: 149,
+          tb201: "",
+          rx201: "TRUE",
+          pos201: 6,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Mihály",
+          last_name: "Ollarí",
+          gender: "M",
+          intheopen: "FALSE",
+          total: 18,
+          score201: "",
+          tb201: "",
+          rx201: "",
+          pos201: 18,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Mike",
+          last_name: "Ekman",
+          gender: "M",
+          intheopen: "FALSE",
+          total: 18,
+          score201: "",
+          tb201: "",
+          rx201: "",
+          pos201: 18,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Kristin",
+          last_name: "Grímsdóttir",
+          gender: "F",
+          intheopen: "FALSE",
+          total: 18,
+          score201: "",
+          tb201: "",
+          rx201: "",
+          pos201: 18,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Amanda",
+          last_name: "Adebahr",
+          gender: "F",
+          intheopen: "FALSE",
+          total: 18,
+          score201: "",
+          tb201: "",
+          rx201: "",
+          pos201: 18,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        },
+        {
+          first_name: "Malin",
+          last_name: "Nordgren",
+          gender: "F",
+          intheopen: "FALSE",
+          total: 18,
+          score201: "",
+          tb201: "",
+          rx201: "",
+          pos201: 18,
+          score202: "",
+          tb202: "",
+          rx202: "",
+          pos202: "",
+          score203: "",
+          tb203: "",
+          rx203: "",
+          pos203: "",
+          score204: "",
+          tb204: "",
+          rx204: "",
+          pos204: "",
+          score205: "",
+          tb205: "",
+          rx205: "",
+          pos205: ""
+        }
+      ];
 
       var resultsContainer = document.getElementById("results");
       try {
+        var getScores = function(ath, week) {
+          var index = "score" + week;
+          if (!ath[index]) {
+            return "";
+          }
+          return (
+            '<div class="week-result week-' +
+            week +
+            '">' +
+            ath[index] +
+            "</div>"
+          );
+        };
 
-      var getScores = function(ath, week) {
-        var index = "score" + week;
-        if (!ath[index]) {
-          return "";
-        }
-        return (
-          '<div class="week-result week-' + week + '">' + ath[index] + "</div>"
-        );
-      };
+        var createLine = function(ath) {
+          var li = document.createElement("li");
+          li.className = "athlete";
+          var line = '<div class="left">';
+          line =
+            line +
+            '<div class="name">' +
+            ath.first_name +
+            " " +
+            ath.last_name +
+            "</div>";
+          line = line + '<div class="scores">';
+          line = line + getScores(ath, "201");
+          line = line + getScores(ath, "202");
+          line = line + getScores(ath, "203");
+          line = line + getScores(ath, "204");
+          line = line + getScores(ath, "205");
+          line = line + "</div>";
+          line = line + "</div>";
+          line = line + '<div class="total-score">' + ath.total + "</div>";
+          li.innerHTML = line;
+          resultsContainer.appendChild(li);
+        };
 
-      var createLine = function(ath) {
-        var li = document.createElement("li");
-        li.className = "athlete";
-        var line = '<div class="left">';
-        line =
-          line +
-          '<div class="name">' +
-          ath.first_name +
-          " " +
-          ath.last_name +
-          "</div>";
-        line = line + '<div class="scores">';
-        line = line + getScores(ath, "201");
-        line = line + getScores(ath, "202");
-        line = line + getScores(ath, "203");
-        line = line + getScores(ath, "204");
-        line = line + getScores(ath, "205");
-        line = line + "</div>";
-        line = line + "</div>";
-        line = line + '<div class="total-score">'+ath.total+'</div>';
-        li.innerHTML = line;
-        resultsContainer.appendChild(li);
-      };
-
-      // getting the text value from the database
-      var dbRef = firebase.database().ref("/");
-      dbRef.on("value", function(snap) {
-        var data = snap.val();
-        for (var i = 0; i < data.length; i++) {
-          createLine(data[i]);
-        }
-      });
-    } catch (ex) {
-      resultsContainer.innerText = ex;
-    }
+        // // getting the text value from the database
+        // var dbRef = firebase.database().ref("/");
+        // dbRef.on("value", function(snap) {
+        //   var data = snap.val();
+          for (var i = 0; i < data.length; i++) {
+            createLine(data[i]);
+          }
+        // });
+      } catch (ex) {
+        resultsContainer.innerText = ex;
+      }
     </script>
   </body>
 </html>
