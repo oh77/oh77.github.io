@@ -33,7 +33,7 @@
 
       li {
         background-color: #ffcb16;
-        height: 74px;
+        height: 76px;
         margin: 5px 0;
         padding: 0;
         width: 100%;
@@ -50,14 +50,14 @@
       }
 
       div.left {
-        height: 74px;
+        /* height: 74px; */
         overflow: hidden;
         padding: 0;
         width: 80%;
       }
       div.right {
         background-color: #ef3e41;
-        height: 74px;
+        height: 76px;
         overflow: hidden;
         padding: 0;
         width: 20%;
@@ -129,13 +129,15 @@
           if (!ath[index]) {
             return "&nbsp;";
           }
-          return (
-            '<div class="week-result week-' +
-            week +
-            '">' +
-            ath[index] +
-            "</div>"
-          );
+          // return (
+          //   '<div class="week-result week-' +
+          //   week +
+          //   '">' +
+          //   ath[index] +
+          //   "</div>"
+          // );
+          return `<div class="week-result week-${week}">${ath[index]}</div>`;
+
         };
 
         var createLine = function(ath) {
