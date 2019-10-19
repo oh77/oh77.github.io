@@ -64,6 +64,7 @@
       }
 
       div.name {
+        height: 42px;
         font-size: 1.85em;
         padding-left: 10px;
       }
@@ -71,8 +72,15 @@
       div.week-result {
         display: inline-block;
         font-size: 1.25em;
-        padding-left: 10px;
-        padding-right: 10px;
+        height: 34px;
+        min-width: 50px;
+        padding: 0 10px;
+        text-align: right;
+        /* padding-right: 10px; */
+      }
+
+      div.week-result:first-child {
+        margin-left: 10px;
       }
 
       div.week-201,
@@ -122,6 +130,11 @@
         xhr.send();
       };
 
+      var key = "total";
+      var sortByTotal = function(a, b) {
+        return a[key] - b[key];
+      };
+
       var resultsContainer = document.getElementById("results");
       try {
         var getScores = function(ath, week) {
@@ -135,8 +148,8 @@
           retval = retval + week;
           retval = retval + '">';
           retval = retval + ath[index];
-          if (ath[rx] === 'FALSE') {
-            retval = retval + ' - scaled';
+          if (ath[rx] === "FALSE") {
+            retval = retval + " - scaled";
           }
           retval = retval + "</div>";
 
@@ -176,6 +189,8 @@
             resultsContainer.innerHTML =
               '<div class="error">' + error + " -- " + (data || "") + "</div>";
           } else {
+            data = data.sort(sortByTotal);
+
             for (var i = 0; i < data.length; i++) {
               createLine(data[i]);
             }
