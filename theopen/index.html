@@ -126,18 +126,21 @@
       try {
         var getScores = function(ath, week) {
           var index = "score" + week;
+          var rx = "rx" + week;
+
           if (!ath[index]) {
             return "&nbsp;";
           }
-          // return (
-          //   '<div class="week-result week-' +
-          //   week +
-          //   '">' +
-          //   ath[index] +
-          //   "</div>"
-          // );
-          return `<div class="week-result week-${week}">${ath[index]}</div>`;
+          var retval = '<div class="week-result week-';
+          retval = retval + week;
+          retval = retval + '">';
+          retval = retval + ath[index];
+          if (ath[rx] === 'FALSE') {
+            retval = retval + ' - scaled';
+          }
+          retval = retval + "</div>";
 
+          return retval;
         };
 
         var createLine = function(ath) {
@@ -170,9 +173,8 @@
 
         getJSON("open2020.json", function(error, data) {
           if (error) {
-            resultsContainer.innerHTML = 
-              '<div class="error">' + error + " -- " + (data || '') + "</div>"
-            ;
+            resultsContainer.innerHTML =
+              '<div class="error">' + error + " -- " + (data || "") + "</div>";
           } else {
             for (var i = 0; i < data.length; i++) {
               createLine(data[i]);
