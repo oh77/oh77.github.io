@@ -33,8 +33,8 @@
 
       li {
         background-color: #ffcb16;
-        height: 76px;
-        margin: 5px 0;
+        height: 90px;
+        margin: 10px 0;
         padding: 0;
         width: 100%;
       }
@@ -57,14 +57,14 @@
       }
       div.right {
         background-color: #ef3e41;
-        height: 76px;
+        height: 90px;
         overflow: hidden;
         padding: 0;
         width: 20%;
       }
 
       div.name {
-        height: 42px;
+        height: 45px;
         font-size: 1.85em;
         padding-left: 10px;
       }
@@ -73,7 +73,7 @@
         display: inline-block;
         font-size: 1.25em;
         height: 34px;
-        min-width: 50px;
+        min-width: 75px;
         padding: 0 10px;
         text-align: right;
         /* padding-right: 10px; */
@@ -140,6 +140,7 @@
         var getScores = function(ath, week) {
           var index = "score" + week;
           var rx = "rx" + week;
+          var pos = "pos" + week;
 
           if (!ath[index]) {
             return "&nbsp;";
@@ -147,6 +148,7 @@
           var retval = '<div class="week-result week-';
           retval = retval + week;
           retval = retval + '">';
+          retval = retval + '[' + ath[pos] + '] ';
           retval = retval + ath[index];
           if (ath[rx] === "FALSE") {
             retval = retval + " - scaled";
@@ -163,9 +165,7 @@
           line =
             line +
             '<div class="name">' +
-            ath.first_name +
-            " " +
-            ath.last_name +
+            ath.short_name +
             "</div>";
           line = line + '<div class="scores">';
           line = line + getScores(ath, "201");
