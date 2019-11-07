@@ -1,0 +1,225 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CrossFit Games - The Open</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../screenly/screenly.min.css">
+    <style>
+      body {
+        background-color: #54c4c7;
+        font-family: "Oswald", sans-serif;
+      }
+      .top > img {
+        margin-top: -120px;
+        max-height: 350px;
+      }
+
+      .table {
+        color: #000000;
+        margin: 0 auto;
+        margin-top: -90px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 10px;
+      }
+
+      li {
+        background-color: #ffcb16;
+        height: 86px;
+        margin: 10px 0;
+        /* padding: 0; */
+        /* width: 100%; */
+      }
+
+      li div {
+        display: inline-block;
+      }
+
+      li:first-child,
+      li:nth-child(2),
+      li:nth-child(3) {
+        background-color: #e6b222;
+      }
+
+      div.left {
+        height: 86px;
+        overflow: hidden;
+        padding: 0;
+        width: 88%;
+      }
+      div.right {
+        background-color: #ef3e41;
+        height: 86px;
+        overflow: hidden;
+        padding: 0;
+        width: 12%;
+      }
+
+      div.name {
+        height: 86px;
+        font-size: 1.85em;
+        margin: 0 10px;
+        padding: 0;
+        vertical-align: top;
+        width: 150px;
+      }
+
+      div.scores {
+        height: 86px;
+      }
+
+      div.week-result {
+        display: inline-block;
+        font-size: 1.75em;
+        height: 86px;
+        margin: 0;
+        /* min-width: 75px; */
+        padding: 3px 10px;
+        text-align: right;
+        /* padding-right: 10px; */
+        width: 130px;
+      }
+
+      div.week-result div {
+        display: block;
+      }
+
+      /* div.week-result:first-child {
+        margin-left: 10px;
+      } */
+
+      div.week-201,
+      .week-203,
+      .week-205 {
+        background-color: #f49127;
+      }
+      .week-202,
+      .week-204 {
+        background-color: #d37728;
+      }
+
+      div.total-score {
+        /* background-color: #f49127; */
+        color: #fff;
+        float: right;
+        font-size: 2.8em;
+        margin: 0;
+        padding: 0;
+        padding-right: 10px;
+        text-align: right;
+        width: 100px;
+      }
+
+      div.tiebreak {
+        font-size: 0.8em;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <img src="./open-logo-custom.svg" alt="" />
+    </div>
+    <div class="table">
+      <ul id="results"></ul>
+    </div>
+
+    <script>
+      var getJSON = function(url, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.responseType = "json";
+        xhr.onload = function() {
+          var status = xhr.status;
+          if (status === 200) {
+            callback(null, xhr.response);
+          } else {
+            callback(status, xhr.response);
+          }
+        };
+        xhr.send();
+      };
+
+      var key = "total";
+      var sortByTotal = function(a, b) {
+        return a[key] - b[key];
+      };
+
+      var resultsContainer = document.getElementById("results");
+      try {
+        var getScores = function(ath, week) {
+          var index = "score" + week;
+          var rx = "rx" + week;
+          var pos = "pos" + week;
+          var tb = "tb" + week;
+
+          if (!ath[index]) {
+            return "&nbsp;";
+          }
+          var retval = '<div class="week-result week-';
+          retval = retval + week;
+          retval = retval + '">';
+          retval = retval + '<div>';
+          retval = retval + ath[index];
+          if (ath[rx] === "FALSE") {
+            retval = retval + " - s";
+          }
+          retval = retval + ' [' + ath[pos] + ']';
+          retval = retval + "</div>";
+          retval = retval + '<div class="tiebreak">' + (ath[tb] || '&nbsp;') + '</div>';
+          retval = retval + "</div>";
+
+          return retval;
+        };
+
+        var createLine = function(ath) {
+          var li = document.createElement("li");
+          li.className = "athlete";
+          var line = '<div class="left">';
+          line =
+            line +
+            '<div class="name">' +
+            ath.short_name +
+            "</div>";
+          line = line + getScores(ath, "201");
+          line = line + getScores(ath, "202");
+          line = line + getScores(ath, "203");
+          line = line + getScores(ath, "204");
+          line = line + getScores(ath, "205");
+          line = line + "</div>";
+          line =
+            line +
+            '<div class="right"><div class="total-score">' +
+            ath.total +
+            "</div></div>";
+          li.innerHTML = line;
+          resultsContainer.appendChild(li);
+        };
+
+        getJSON("open2020.json", function(error, data) {
+          if (error) {
+            resultsContainer.innerHTML =
+              '<div class="error">' + error + " -- " + (data || "") + "</div>";
+          } else {
+            data = data.sort(sortByTotal);
+
+            for (var i = 0; i < data.length; i++) {
+              createLine(data[i]);
+            }
+          }
+        });
+      } catch (ex) {
+        resultsContainer.innerText = ex;
+      }
+    </script>
+  </body>
+</html>
