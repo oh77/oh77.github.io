@@ -82,15 +82,19 @@
         height: 86px;
         margin: 0;
         /* min-width: 75px; */
-        padding: 3px 10px;
+        padding: 0;
+        padding-right: 10px;
         text-align: right;
         /* padding-right: 10px; */
-        width: 130px;
+        width: 135px;
       }
 
       div.week-result div {
         display: block;
-        max-height: 42px;
+        height: 40px;
+      }
+      div.week-result div:nth-child(2) {
+        margin-top: -5px;
       }
 
       /* div.week-result:first-child {
@@ -173,7 +177,9 @@
           if (ath[rx] === "FALSE") {
             retval = retval + " - s";
           }
-          retval = retval + ' [' + ath[pos] + ']';
+          if (ath[pos]) {
+            retval = retval + ' [' + ath[pos] + ']';
+          }
           retval = retval + "</div>";
           retval = retval + '<div class="tiebreak">' + (ath[tb] || '&nbsp;') + '</div>';
           retval = retval + "</div>";
