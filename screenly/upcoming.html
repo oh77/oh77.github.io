@@ -18,11 +18,10 @@
       }
 
       .bg-icon {
-        left: 40px;
+        left: -40px;
         position: absolute;
-        top: 0;
-        transform: rotate(-25deg);
-        width: 50%;
+        top: -20px;
+        width: 800px;
         z-index: -1;
       }
 
@@ -39,20 +38,21 @@
       }
 
       li .title {
-        font-size: 4em;
+        font-size: 5em;
         font-weight: bold;
       }
       li .subtitle {
-        font-size: 2em;
+        font-size: 3.5em;
+        margin-top: -0.5em;
+        font-style: italic;
       }
       li .date {
-        font-size: 4em;
+        font-size: 3.5em;
       }
-
     </style>
   </head>
   <body>
-    <div class="bg-icon"><img src="./calendar.svg" alt=""></div>
+    <div class="bg-icon"><img src="./calendar_angle.svg" alt="" /></div>
     <div class="table">
       <ul id="schema"></ul>
     </div>
@@ -80,13 +80,12 @@
 
       var schemaContainer = document.getElementById("schema");
       try {
-
         var createLine = function(data) {
           var li = document.createElement("li");
           li.className = "entry";
-          var line = '<div class="title">' + data['title'] + '</div>';
-          line += '<div class="subtitle">' + data['subtitle'] + '</div>';
-          line += '<div class="date">' + data['date'] + '</div>';
+          var line = '<div class="title">' + data["title"] + "</div>";
+          line += '<div class="subtitle">' + data["subtitle"] + "</div>";
+          line += '<div class="date">' + data["date"] + "</div>";
           li.innerHTML = line;
           schemaContainer.appendChild(li);
         };

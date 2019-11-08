@@ -11,13 +11,17 @@
     },
     {
         "title": "Polis-SM i Funktionell Fitness",
-        "subtitle": "https://www.facebook.com/SwedishPoliceCF",
+        "subtitle": "facebook.com/SwedishPoliceCF",
         "date": "6 december"
     },
     {
         "title": "Testweek",
-        "subtitle": "Hur bra har du blivit?",
+        "subtitle": "Hur bra har du utvecklat din träning?",
         "date": "9 december - 15 december"
+    },
+    {
+        "title": "The Seven",
+        "subtitle": "Avsluta året på bästa sätt",
+        "date": "31 december"
     }
-
 ]
