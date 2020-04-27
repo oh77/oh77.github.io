@@ -1,32 +1,27 @@
 [
     {
-        "title": "Kronan Throwdown",
-        "subtitle": "",
-        "date": "29 februari - 1 mars"
+        "title": "Första maj",
+        "subtitle": "Stängt",
+        "date": "1 maj"
     },
     {
         "title": "Yoga",
         "subtitle": "",
-        "date": "1 mars"
+        "date": "10 maj"
     },
     {
         "title": "Onramp",
         "subtitle": "Introduktionskurs",
-        "date": "11, 14 & 15 mars"
+        "date": "13, 16 & 17 maj"
+    },
+    {
+        "title": "CrossFit Kids avslutning",
+        "subtitle": "",
+        "date": "22-23 maj"
     },
     {
         "title": "Test week",
         "subtitle": "",
-        "date": "30 mars - 4 april"
-    },
-    {
-        "title": "Club Series",
-        "subtitle": "Metalbox FF - hemmamatch",
-        "date": "5 april"
-    },
-    {
-        "title": "Onramp",
-        "subtitle": "Introduktionskurs",
-        "date": "15, 18 & 19 april"
+        "date": ""
     }
 ]
