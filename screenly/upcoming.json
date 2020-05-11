@@ -1,15 +1,5 @@
 [
     {
-        "title": "Första maj",
-        "subtitle": "Stängt",
-        "date": "1 maj"
-    },
-    {
-        "title": "Yoga",
-        "subtitle": "",
-        "date": "10 maj"
-    },
-    {
         "title": "Onramp",
         "subtitle": "Introduktionskurs",
         "date": "13, 16 & 17 maj"
@@ -22,6 +12,16 @@
     {
         "title": "Test week",
         "subtitle": "",
-        "date": ""
-    }
+        "date": "8-13 juni"
+    },
+    {
+        "title": "Yoga",
+        "subtitle": "",
+        "date": "7 juni"
+    },
+    {
+        "title": "Onramp",
+        "subtitle": "Introduktionskurs",
+        "date": "10, 13 & 14 juni"
+    },
 ]
