@@ -1,17 +1,22 @@
 [
     {
-        "title": "Test week",
-        "subtitle": "",
-        "date": "8-13 juni"
-    },
-    {
-        "title": "Yoga",
-        "subtitle": "",
-        "date": "7 juni"
-    },
-    {
         "title": "Onramp",
         "subtitle": "Introduktionskurs",
-        "date": "10, 11 & 14 juni"
+        "date": "augusti"
+    },
+    {
+        "title": "CrossFit Kids & Teens",
+        "subtitle": "Terminsstart",
+        "date": "augusti"
+    },
+    {
+        "title": "CrossFit Games",
+        "subtitle": "games.crossfit.com",
+        "date": "14-20 september"
+    },
+    {
+        "title": "Functional Fitness SM",
+        "subtitle": "Östervåla",
+        "date": "17-18 oktober"
     }
 ]
