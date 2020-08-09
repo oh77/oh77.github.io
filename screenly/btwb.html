@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTWB</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #dddddd;
+        /* background: linear-gradient(#dddddd, #ffffff); */
+        font-family: "Oswald", sans-serif;
+      }
+
+      div.btwb_webwidget {
+        background-color: transparent;
+        background: linear-gradient(#f7a18e, #dddddd);
+        margin: 0;
+        padding: 30px 10px;
+      }
+
+      h5 {
+        border-bottom: 2px solid #df340e;
+        color: #df340e;
+        font-size: 24px;
+      }
+
+      h6 {
+        color: #212121;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-top: 20px;
+      }
+
+      div.head {
+        background-color: #df340e;
+        width: 100vw;
+      }
+
+      ul.btwb-wod-list {
+        /* WOD Track */
+        background-color: transparent;
+        border-bottom: 3px solid #212121;
+        margin-bottom: 20px;
+      }
+      ul.btwb-wod-list li {
+        /* WOD Parts */
+        background-color: transparent;
+      }
+      ul.btwb-wod-list li hr {
+        display: none;
+      }
+
+      /* WOD Parts */
+      /* ul.btwb-wod-list li:before {
+        border: 2px solid #df340e;
+        color: #df340e;
+        font-size: 20px;
+        padding: 5px 80px;
+        text-align: center;
+      }
+      ul.btwb-wod-list li:nth-child(1):before {
+        content: "A";
+      }
+      ul.btwb-wod-list li:nth-child(2):before {
+        content: "B";
+      }
+      ul.btwb-wod-list li:nth-child(3):before {
+        content: "C";
+      }
+      ul.btwb-wod-list li:nth-child(4):before {
+        content: "D";
+      }
+      ul.btwb-wod-list li:nth-child(5):before {
+        content: "E";
+      } */
+
+      /* Additional info */
+      ul.btwb-wod-list li p i {
+        color: #df340e;
+        font-size: 14px;
+        font-style: italic;
+      }
+
+      ul.btwb-wod-list li small {
+        color: #434343;
+        font-size: 10px;
+        font-style: italic;
+      }
+
+      ul.btwb-wod-list li small u {
+        display: none;
+      }
+
+      .btwb-workout-description {
+        font-size: 14px;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body style="padding: 0; margin: 0;">
+    <div class="head">
+      <img src="images/btwb-logo.png" height="100px" alt="BTWB" />
+    </div>
+    <div
+      class="btwb_webwidget"
+      data-type="wods"
+      data-sections="main"
+      data-track_ids="246214,593764"
+      data-activity_length="0"
+      data-leaderboard_length="0"
+      data-days="0"
+    ></div>
+    <script
+      id="btwb_config"
+      data-api_key="4470cfe42f976d1289487c92687fad10"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://static.btwb.com/libs/webwidgets/2/webwidgets.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://static.btwb.com/libs/webwidgets/2/webwidgets.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    />
+  </body>
+</html>
