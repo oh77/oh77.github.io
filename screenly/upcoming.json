@@ -1,10 +1,5 @@
 [
     {
-        "title": "Onramp",
-        "subtitle": "Introduktionskurs",
-        "date": "19, 20 & 22 augusti"
-    },
-    {
         "title": "CrossFit Kids & Teens",
         "subtitle": "Terminsstart",
         "date": "27-29 augusti"
@@ -12,12 +7,17 @@
     {
         "title": "Yoga",
         "subtitle": "Den bästa återhämtningen",
-        "date": "september"
+        "date": "13 september"
     },
     {
         "title": "CrossFit Games",
         "subtitle": "games.crossfit.com",
         "date": "14-20 september"
+    },
+    {
+        "title": "Onramp",
+        "subtitle": "Introduktionskurs",
+        "date": "16, 17 & 19 september"
     },
     {
         "title": "Functional Fitness SM",
