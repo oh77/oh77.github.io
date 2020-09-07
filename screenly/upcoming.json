@@ -1,10 +1,5 @@
 [
     {
-        "title": "CrossFit Kids & Teens",
-        "subtitle": "Terminsstart",
-        "date": "27-29 augusti"
-    },
-    {
         "title": "Yoga",
         "subtitle": "Den bästa återhämtningen",
         "date": "13 september"
@@ -18,6 +13,11 @@
         "title": "Onramp",
         "subtitle": "Introduktionskurs",
         "date": "16, 17 & 19 september"
+    },
+    {
+        "title": "Benchmark Sunday",
+        "subtitle": "What WOD? Woot!",
+        "date": "20 september"
     },
     {
         "title": "Functional Fitness SM",
