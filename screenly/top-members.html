@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top booking members</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #363636;
+        /* background: linear-gradient(#dddddd, #ffffff); */
+        font-family: "Oswald", sans-serif;
+      }
+
+      .hero {
+        color: goldenrod;
+        font-size: 84px;
+        font-weight: bold;
+        text-align: center;
+        width: 100vw;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .list-section {
+        background-color: aqua;
+        border-radius: 20px;
+        color: #363636;
+        margin: 20px;
+        min-height: 200px;
+        padding: 20px;
+      }
+      .list-section:nth-child(1) {
+        background-color: gold;
+      }
+      .list-section:nth-child(2) {
+        background-color: silver;
+      }
+      .list-section:nth-child(3) {
+        background-color: goldenrod;
+      }
+      .list-section:nth-child(4) {
+        background-color: slategray;
+      }
+
+      .list-section .title {
+        border-right: 1px solid #636363;
+        font-size: 60px;
+        height: 100%;
+        margin: auto 0;
+        min-height: 200px;
+        padding-right: 20px;
+      }
+
+      .list-section .members {
+        font-size: 36px;
+        padding-left: 20px;
+      }
+
+      .list-section .members li {
+        margin-bottom: 10px;
+      }
+
+      .list-section > div {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .footer {
+          text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">WALL OF FAME</div>
+    <ul class="top-list">
+      <!-- <li class="list-section list-section-1000"></li> -->
+      <li class="list-section list-section-900">
+        <div class="title">900</div>
+        <div class="members">
+          <ul>
+            <li>Stefan Jennefalk</li>
+          </ul>
+        </div>
+      </li>
+      <li class="list-section list-section-800">
+        <div class="title">800</div>
+        <div class="members">
+          <ul>
+            <li>Peter Hjärtstam</li>
+            <li>Josefin Götesson</li>
+          </ul>
+        </div>
+      </li>
+      <!-- <li class="list-section list-section-700"></li> -->
+      <!-- <li class="list-section list-section-600"></li> -->
+      <li class="list-section list-section-500">
+        <div class="title">500</div>
+        <div class="members">
+          <ul>
+            <li>Lars Rittblad</li>
+            <li>Niklas Rittblad</li>
+          </ul>
+        </div>
+      </li>
+      <li class="list-section list-section-400">
+        <div class="title">400</div>
+        <div class="members">
+          <ul>
+            <li>Valeria Petrovets</li>
+            <li>Mikael Ekedahl</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <div class="footer">
+        <img src="./images/cfmb-small-logo.png" alt="">
+    </div>
+  </body>
+</html>
