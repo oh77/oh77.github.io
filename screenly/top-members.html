@@ -17,11 +17,18 @@
       }
 
       .hero {
-        color: goldenrod;
-        font-size: 84px;
+        color: gold;
         font-weight: bold;
         text-align: center;
         width: 100vw;
+      }
+
+      .hero .title {
+        font-size: 84px;
+      }
+
+      .hero .subtitle {
+        font-size: 36px;
       }
 
       ul {
@@ -29,39 +36,78 @@
         padding: 0;
       }
 
+      /* li.logo img {
+        display: inline-block;
+      } */
+
       .list-section {
-        background-color: aqua;
-        border-radius: 20px;
         color: #363636;
         margin: 20px;
         min-height: 200px;
-        padding: 20px;
       }
-      .list-section:nth-child(1) {
+
+      .list-section div {
+        background-color: aqua;
+        color: #363636;
+        min-height: 200px;
+        padding: 20px;
+        margin: auto 0;
+      }
+
+      .list-section div.logo {
+        background-color: #363636!important;
+        display: block;
+        margin: auto 0;
+        margin-bottom: -25px;
+        min-height: auto;
+        text-align: center;
+      }
+
+      .list-section div.title {
+        border-radius: 20px 0 0 20px;
+      }
+
+      .list-section div.members {
+        border-radius: 0 20px 20px 0;
+      }
+
+      .list-section:nth-child(1) div {
         background-color: gold;
       }
-      .list-section:nth-child(2) {
+      .list-section:nth-child(1) div.members {
+        font-size: 60px;
+      }
+
+      .list-section:nth-child(2) div {
         background-color: silver;
       }
-      .list-section:nth-child(3) {
+
+      .list-section:nth-child(2) div.members {
+        font-size: 48px;
+      }
+
+      .list-section:nth-child(3) div {
         background-color: goldenrod;
       }
-      .list-section:nth-child(4) {
+
+      .list-section:nth-child(4) div {
         background-color: slategray;
       }
 
       .list-section .title {
-        border-right: 1px solid #636363;
         font-size: 60px;
         height: 100%;
         margin: auto 0;
+        margin-right: 5px;
         min-height: 200px;
         padding-right: 20px;
+        width: 120px;
       }
 
       .list-section .members {
         font-size: 36px;
         padding-left: 20px;
+        width: calc(100vw - 280px);
       }
 
       .list-section .members li {
@@ -74,15 +120,23 @@
       }
 
       .footer {
-          text-align: center;
+        text-align: center;
       }
     </style>
   </head>
   <body>
-    <div class="hero">WALL OF FAME</div>
+    <div class="hero">
+      <div class="title">WALL OF FAME</div>
+      <div class="subtitle">Antal bokade pass</div>
+    </div>
     <ul class="top-list">
       <!-- <li class="list-section list-section-1000"></li> -->
       <li class="list-section list-section-900">
+        <div class="logo">
+          <img src="./images/cfmb-small-logo.png" alt="" />
+          <img src="./images/cfmb-small-logo.png" alt="" />
+          <img src="./images/cfmb-small-logo.png" alt="" />
+        </div>
         <div class="title">900</div>
         <div class="members">
           <ul>
@@ -91,6 +145,10 @@
         </div>
       </li>
       <li class="list-section list-section-800">
+        <div class="logo">
+          <img src="./images/cfmb-small-logo.png" alt="" />
+          <img src="./images/cfmb-small-logo.png" alt="" />
+        </div>
         <div class="title">800</div>
         <div class="members">
           <ul>
@@ -102,6 +160,9 @@
       <!-- <li class="list-section list-section-700"></li> -->
       <!-- <li class="list-section list-section-600"></li> -->
       <li class="list-section list-section-500">
+        <div class="logo">
+          <img src="./images/cfmb-small-logo.png" alt="" />
+        </div>
         <div class="title">500</div>
         <div class="members">
           <ul>
@@ -111,6 +172,9 @@
         </div>
       </li>
       <li class="list-section list-section-400">
+        <div class="logo">
+          <img src="./images/cfmb-small-logo.png" alt="" />
+        </div>
         <div class="title">400</div>
         <div class="members">
           <ul>
@@ -120,8 +184,5 @@
         </div>
       </li>
     </ul>
-    <div class="footer">
-        <img src="./images/cfmb-small-logo.png" alt="">
-    </div>
   </body>
 </html>
