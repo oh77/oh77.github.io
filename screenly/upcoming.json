@@ -1,27 +1,32 @@
 [
     {
-        "title": "Yoga",
-        "subtitle": "Den bästa återhämtningen",
-        "date": "13 september"
+        "title": "Benchmark Sunday",
+        "subtitle": "What WOD? Woot!",
+        "date": "4 oktober"
     },
     {
-        "title": "CrossFit Games",
-        "subtitle": "games.crossfit.com",
-        "date": "14-20 september"
+        "title": "Yoga",
+        "subtitle": "Den bästa återhämtningen",
+        "date": "11 oktober"
     },
     {
         "title": "Onramp",
         "subtitle": "Introduktionskurs",
-        "date": "16, 17 & 19 september"
-    },
-    {
-        "title": "Benchmark Sunday",
-        "subtitle": "What WOD? Woot!",
-        "date": "20 september"
+        "date": "14, 15 & 17 oktober"
     },
     {
         "title": "Functional Fitness SM",
         "subtitle": "Östervåla",
         "date": "17-18 oktober"
+    },
+    {
+        "title": "CrossFit Games - Stage 2",
+        "subtitle": "games.crossfit.com",
+        "date": "19-25 oktober"
+    },
+    {
+        "title": "CrossFit Games Open",
+        "subtitle": "games.crossfit.com",
+        "date": "feb-mar 2021"
     }
 ]
