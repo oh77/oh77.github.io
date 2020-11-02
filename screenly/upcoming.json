@@ -1,20 +1,5 @@
 [
     {
-        "title": "CrossFit Games - Stage 2",
-        "subtitle": "games.crossfit.com",
-        "date": "19-25 oktober"
-    },
-    {
-        "title": "Benchmark Sunday",
-        "subtitle": "What WOD? Woot!",
-        "date": "1 november"
-    },
-    {
-        "title": "Onramp",
-        "subtitle": "Introduktionskurs",
-        "date": "11, 12 & 14 november"
-    },
-    {
         "title": "Yoga",
         "subtitle": "Den bästa återhämtningen",
         "date": "15 november"
@@ -25,8 +10,13 @@
         "date": "15 november"
     },
     {
-        "title": "CrossFit Games Open",
+        "title": "Benchmark Sunday",
+        "subtitle": "What WOD? Woot!",
+        "date": "29 november"
+    },
+    {
+        "title": "CrossFit Games Open 21.1",
         "subtitle": "games.crossfit.com",
-        "date": "feb-mar 2021"
+        "date": "18 februari"
     }
 ]
